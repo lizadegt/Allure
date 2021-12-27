@@ -38,12 +38,12 @@ public class TestingCardDeliveryOrder {
         $("[class=checkbox__box]").click();
         $(withText("Запланировать")).click();
         $(withText("Успешно!")).shouldBe(visible);
-      //  $("[data-test-id=success-notification] .notification__content").shouldHave(exactText("Встреча успешно запланирована на " + DataGenerator.generateDate(3)));
+        $("[data-test-id=success-notification] .notification__content").shouldHave(exactText("Встреча успешно запланирована на " + DataGenerator.generateDate(3)));
         $("[data-test-id=date] input").doubleClick().sendKeys(Keys.BACK_SPACE);
         $("[data-test-id=date] input").setValue(DataGenerator.generateDate(10));
         $(withText("Запланировать")).click();
         $(withText("Необходимо подтверждение")).shouldBe(visible);
         $(withText("Перепланировать")).click();
-     //   $("[data-test-id=success-notification] .notification__content").shouldHave(exactText("Встреча успешно запланирована на " + DataGenerator.generateDate(10)));
+        $("[data-test-id=success-notification] .notification__content").shouldHave(exactText("Встреча успешно запланирована на " + DataGenerator.generateDate(10)));
     }
 }
